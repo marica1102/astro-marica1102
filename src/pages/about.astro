@@ -1,0 +1,124 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Timeline from '../components/about/Timeline.astro'
+import { SITE_TITLE, SITE_DESCRIPTION, JOB_TITLE } from '../consts'
+
+const myName = '金築 美知 - KANETSUKI Misato'
+---
+
+<Layout title={`About - ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
+  <main class='page-container'>
+    <h1 class='gradient-text page-title'>About</h1>
+
+    <div class='profile'>
+      <img src={`${import.meta.env.BASE_URL}/blog-placeholder-about.jpg`} alt={myName} class='profile-image' />
+      <div class='profile-info'>
+        <h2>{myName}</h2>
+        <p class='job-title'>{JOB_TITLE}</p>
+      </div>
+    </div>
+
+    <section class='introduction'>
+      <h3>プロフィール</h3>
+      <p>1994年11月2日生まれ、埼玉県加須市出身。</p>
+      <p>
+        株式会社IDOM・株式会社テイツーを経て、
+        現在は株式会社ネクスコ東日本シティフードの派遣社員として羽生PA（上り線）の事務職をしている。
+        <br />
+        元々PC自体には抵抗がない性格で、2025年よりデザインの勉強を始める。
+        </a>
+      </p>
+    </section>
+
+    <section class='experience'>
+      <h3>経歴</h3>
+
+      <Timeline date='2025年- 現在' title='株式会社ネクスコ東日本シティフード'>
+        <p>
+          2025年2月より株式会社ネクスコ東日本シティフードの派遣社員として羽生PA（上り線）の事務職をしている。
+          <br />
+        </p>
+        <p>元々PC自体には抵抗がない性格で、2025年よりデザインの勉強を始める。</p>
+
+      <Timeline date='2023年-2025年' title='株式会社テイツー'>
+        <p>
+          株式会社IDOMを退職後、アルバイト期間を経て株式会社テイツー・古本市場幸手店の契約社員として勤務。
+          <br />
+          店舗運営だけでなく、オリパ（トレカ版おみくじ）の作成やアルバイトの人材育成を行っていた。
+        </p>
+        <p>2024年の年末年始に体調を崩し、復帰困難となり退職。</p>
+        </ul>
+      </Timeline>
+
+      <Timeline date='2017 - 2021年' title='株式会社IDOM'>
+        <p>
+          大学卒業後、株式会社IDOMに就職して営業職・コールセンター業務
+          <br />山口・島根・大分・福岡・熊本・岐阜・千葉とあちこちに異動・勤務していた。
+          <br />双極性障害1型と診断を受け2020年11月から1年休職・その後退職。
+        </p>
+      </Timeline>
+
+      <Timeline date='2013 - 2017年' title='共栄大学　国際経営学部　国際経営学科'>
+        <p>大学ではスポーツマネジメントコースを専攻。
+          <br>経営学全般を学ぶ傍ら、空手部に所属しケガが増えた経験からスポーツマネジメントコースで「支えるスポーツ」について専攻。
+        </p>
+      </Timeline>
+
+      <Timeline date='2010 - 2013年' title='埼玉県立　羽生第一高等学校'>
+        <p>コーラス部で合唱にのめりこみ、生徒会執行部の総務として学校を駆け回っていた。
+          <br />
+          学校の先生曰く「動いてないと死ぬ」と言われていたほど。
+        </p>
+      </Timeline>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+
+  .profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 2rem;
+  }
+
+  .profile-info h2 {
+    font-size: 1.75rem;
+  }
+
+  .job-title {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 0;
+  }
+
+  section {
+    margin-bottom: 3rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+  }
+
+  @media (max-width: 720px) {
+    .profile {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .profile-image {
+      width: 120px;
+      height: 120px;
+      margin-right: 0;
+      margin-bottom: 1.5rem;
+    }
+  }
+</style>
