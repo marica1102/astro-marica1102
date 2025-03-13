@@ -8,6 +8,7 @@ import icon from 'astro-icon'
 // https://astro.build/config
 export default defineConfig({
   site: 'https://marica1102.github.io',
+  // リポジトリ名と合わせる
   base: '/astro-marica1102',
   integrations: [mdx(), sitemap(), icon()],
 })
